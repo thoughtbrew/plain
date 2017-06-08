@@ -21,9 +21,9 @@ const mask2Short = (netmask) => {
 const short2Mask = (bitCount) => {
   const mask = [];
   for (var i = 0; i < 4 ; i++) {
-  const n = Math.min(bitCount, 8);
-  mask.push(256 - Math.pow(2, 8-n));
-  bitCount -= n;
+    const n = Math.min(bitCount, 8);
+    mask.push(256 - Math.pow(2, 8-n));
+    bitCount -= n;
   }
   return mask.join('.');
 } 
