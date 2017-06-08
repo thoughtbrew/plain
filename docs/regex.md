@@ -5,9 +5,12 @@
 `mask2Short('255.255.255.0') // -> 24`
 
 ```
-const mask2Short = (netmask) => (netmask.split('.').map(Number)
+const mask2Short = (netmask) => {
+	const mask = (netmask.split('.').map(Number)
       .map(part => (part >>> 0).toString(2))
       .join('')).split('1').length -1;
+	return `/${mask}`;
+}
 ```
 
 #### Convert subnet shorthand to mask
