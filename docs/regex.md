@@ -6,10 +6,10 @@
 
 ```
 const mask2Short = (netmask) => {
-	const mask = (netmask.split('.').map(Number)
+  const mask = (netmask.split('.').map(Number)
       .map(part => (part >>> 0).toString(2))
       .join('')).split('1').length -1;
-	return `/${mask}`;
+  return `/${mask}`;
 }
 ```
 
@@ -21,9 +21,9 @@ const mask2Short = (netmask) => {
 const short2Mask = (bitCount) => {
   const mask = [];
   for (var i = 0; i < 4 ; i++) {
-    const n = Math.min(bitCount, 8);
-    mask.push(256 - Math.pow(2, 8-n));
-    bitCount -= n;
+  const n = Math.min(bitCount, 8);
+  mask.push(256 - Math.pow(2, 8-n));
+  bitCount -= n;
   }
   return mask.join('.');
 } 
