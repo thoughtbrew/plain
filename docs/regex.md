@@ -1,3 +1,16 @@
+### Text Converesion
+
+#### Camel to Snake Case
+
+`camel2Snake('theFooBar') // -> the_foo_bar`
+
+```
+const camel2Snake = (str) => {
+  return String(str)
+    .replace(/([A-Z])/g, function($1){return "_"+$1.toLowerCase();});
+}
+```
+
 ### IP Addresses
 
 #### Convert subnet mask to shorthand
@@ -38,4 +51,5 @@ const validate = (str) => {
     return /^(([1-9]?\d|1\d\d|2[0-4]\d|25[0-5])(\.(?!$)|$)){4}$/.test(str);
 };
 ```
+
 
