@@ -25,6 +25,9 @@ const binaryIndexOf = (arr, str) => {
     return -1;
 }
 ```
+#### Notes
+
+Array must be sorted.
 
 #### Tags
 
