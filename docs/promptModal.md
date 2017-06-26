@@ -7,6 +7,13 @@ promptModal('Please enter your new password.', (message) => {
   // ...
 }, {password: true});
 ```
+
+#### Options
+
+- `password: Boolean`
+- `validate: Function`
+
+
 #### JS
 
 ```
@@ -52,9 +59,15 @@ function promptModal(msg, cbk, opts) {
 		document.body.removeChild(wrapper);
 	}
 	function onOkay(e, bypass) {
-		console.log(e.keyCode, e.charCode, e);
 		if (bypass || e.type === 'click' || [13, 32].indexOf(e.keyCode) > -1) {
 			const val = String(input.value);
+			let valid = true;
+			if (opts.validate && typeof opts.validate === 'function') {
+				valid = opts.validate.call(this, val);
+			}
+			if (valid !== true) {
+				return;
+			}
 			cbk(val);
 			clean();
 		}
