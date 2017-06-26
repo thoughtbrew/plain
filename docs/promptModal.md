@@ -1,6 +1,6 @@
 ### Prompt modal replacement
 
-`<2Kb`
+Drop-in substitute for native `prompt(str)` method. `<2Kb`.
 
 ```
 promptModal('Please enter your new password.', (message) => {
