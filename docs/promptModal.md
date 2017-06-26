@@ -153,3 +153,7 @@ function promptModal(msg, cbk, opts) {
   margin-right: 8px;
 }
 ```
+
+### Tags
+
+`ui` `prompt` `modal`
